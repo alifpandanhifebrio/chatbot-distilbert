@@ -1,0 +1,168 @@
+{
+    "intents": [
+      {
+        "tag": "selamat pagi",
+        "patterns": [
+          "selamat pagi",
+          "pagi",
+          "halo selamat pagi",
+          "pagi kak",
+          "hi selamat pagi",
+          "pagi pa",
+          "pagi bu",
+          "pagi mas"
+        ],
+        "responses": [
+          "Hallo, Selamat Pagi! Saya baby GPT ada yang bisa saya bantu?",
+          "Hai, Selamat Pagi! Saya baby GPT ada yang bisa saya bantu?",
+          "Hallo, Selamat Pagi! Masalah apa yang sedang kamu hadapi?"
+        ]
+      },
+      {
+        "tag": "selamat siang",
+        "patterns": [
+          "selamat siang",
+          "siang",
+          "halo selamat siang",
+          "siang kak",
+          "hi selamat siang",
+          "siang pa",
+          "siang bu",
+          "siang mas"
+        ],
+        "responses": [
+          "Hallo, Selamat Pagi! Saya baby GPT ada yang bisa saya bantu?",
+          "Hai, Selamat Pagi! Saya baby GPT ada yang bisa saya bantu?",
+          "Hallo, Selamat Pagi! Masalah apa yang sedang kamu hadapi?"
+        ]
+      },
+      {
+        "tag": "selamat Sore",
+        "patterns": [
+          "selamat Sore",
+          "Sore",
+          "halo selamat Sore",
+          "Sore kak",
+          "hi selamat Sore",
+          "Sore pa",
+          "Sore bu"
+        ],
+        "responses": [
+          "Hallo, Selamat Sore! Saya baby GPT ada yang bisa saya bantu?",
+          "Hai, Selamat Sore! Saya baby GPT ada yang bisa saya bantu?",
+          "Hallo, Selamat Sore! Masalah apa yang sedang kamu hadapi?"
+        ]
+      },
+      {
+        "tag": "selamat malam",
+        "patterns": [
+          "selamat malam",
+          "malam",
+          "halo selamat malam",
+          "malam kak",
+          "hi selamat malam",
+          "malam pa",
+          "malam bu"
+        ],
+        "responses": [
+          "Hallo, Selamat Malam! Saya baby GPT ada yang bisa saya bantu?",
+          "Hai, Selamat Malam! Saya baby GPT ada yang bisa saya bantu?",
+          "Hallo, Selamat Malam! Masalah apa yang sedang kamu hadapi?"
+        ]
+      },
+      {
+        "tag": "pembukaan",
+        "patterns": ["hi", "hello", "hai", "hallo", "halo", "hay", "helo"],
+        "responses": [
+          "Hallo! ada yang bisa kami bantu?",
+          "Hello! ada yang bisa kami bantu?",
+          "Hai! ada yang bisa kami bantu?",
+          "Hi! ada yang bisa kami bantu?",
+          "Hallo! Masalah apa yang sedang kamu hadapi?",
+          "Hello! Masalah apa yang sedang kamu hadapi?",
+          "Hi! Masalah apa yang sedang kamu hadapi?",
+          "Hai! ada yang bisa kami bantu?"
+        ]
+      },
+      {
+        "tag": "ktp",
+        "patterns": [
+          "bagaimana jika petani sudah tidak memiliki KTP asli hilang",
+          "bagaimana jika ktp hilang",
+          "Apa langkah-langkah yang dapat diambil oleh seorang petani yang kehilangan Kartu Tanda Penduduk (KTP) aslinya",
+          "Apakah ada alternatif lain yang dapat digunakan oleh petani jika mereka kehilangan KTP asli mereka"
+        ],
+        "responses": [
+          "belum diatur dalam juknis, mengikuti kebijakan lapangan",
+          "Pelaksanaan kegiatan tersebut masih menunggu petunjuk teknis resmi karena belum diatur dalam juknis yang relevan",
+          "Dalam situasi ini, langkah-langkah yang diambil akan mengikuti kebijakan lapangan yang ada saat ini"
+        ]
+      },
+      {
+        "tag": "penutupan",
+        "patterns": [
+          "baik, terima kasih",
+          "goodbye",
+          "terima kasih",
+          "makasih",
+          "makasih ya",
+          "selesai",
+          "mksh",
+          "makasi"
+        ],
+        "responses": [
+          "Sampai jumpa lagi!",
+          "Sampai jumpa kembali!",
+          "Terima kasih kembali",
+          "Terima kasih, senang dapat membantu anda"
+        ]
+      },
+      {
+        "tag": "aplikasi crash",
+        "patterns": [
+          "aplikasi mengalami crash",
+          "aplikasi keluar sendiri",
+          "aplikasi force close"
+        ],
+        "responses": [
+          "Sobat mohon maaf untuk sementara bisa menggunakan device lain dengan versi android di atas 8 ya. Perbaikan aplikasi iPubers untuk versi android 8 akan diperbarui diupdate selanjutnya. Mohon maaf atas kendala yang terjadi🙏"
+        ]
+      },
+      {
+        "tag": "gagal login",
+        "patterns": [
+          "aplikasi tidak bisa masuk",
+          "aplikasi gagal masuk",
+          "aplikasi gabisa masuk",
+          "aplikasi saya tidak bisa masuk"
+        ],
+        "responses": [
+          "Halo Sobat Kios! 👋👋\n\nTerkait kendala yg dialami, Tim kami sudah membantu me-reset akun Sobat sehingga Sobat dapat login kembali.\nPastikan menggunakan password Pupuk123 ya.\nMohon konfirmasinya jika kios sudah bisa login. Terima kasih☺"
+        ]
+      },
+      {
+        "tag": "username password tidak cocok",
+        "patterns": [
+          "username dan password tidak cocok",
+          "username password sudah benar tapi tidak bisa masuk",
+          "tidak bisa login"
+        ],
+        "responses": [
+          "Halo Sobat! 👋👋\n\nTerima kasih telah menghubungi HELPDESK kami. Terkait kendala username dan password tidak cocok, sobat bisa klik \"Lupa kata sandi\" pada aplikasi ya. Jika masih mengalami kendala silahkan hubungi kami kembali dengan nomor yang telah terdaftar di Rekan. Mohon konfirmasi ulang ke kami jika kendala sudah terselesaikan ya sobat.\n\nSobat bisa pilih tombol Lupa Kata Sandi dan mengikuti tahapan berikut:\n1. Pilih tombol \"Lupa Kata Sandi di halaman\" login Rekan Kios.\n2. Masukkan nomor HP yang terdaftar di Rekan Kios.\n3. Masukkan kode OTP yang dikirimkan melalui SMS \"ADSMEDIA\".\n4. Masukkan sandi baru, pilih \"Lanjut\".\n5. Kata sandi berhasil diubah🌾\n\nTerima kasih😊"
+        ]
+      },
+      {
+        "tag": "customer service",
+        "patterns": [
+          "Hubungi customer service",
+          "saya mau chat dengan customer service",
+          "chat dengan layanan pelanggan",
+          "chat dengan helpdes"
+        ],
+        "responses": [
+          "Untuk menghubungi customer service silahkan tekan tombol di atas"
+        ]
+      }
+    ]
+  }
+  
