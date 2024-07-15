@@ -1,83 +1,91 @@
-import json
 import torch
+import json
 from torch.utils.data import Dataset, DataLoader
 from transformers import DistilBertTokenizer, DistilBertForSequenceClassification, AdamW
 
-# Load data intents
-with open('intents.json', 'r', encoding='utf-8') as f:
-    intents = json.load(f)
+# Load intents
+with open('intents.json', 'r', encoding='utf-8') as json_data:
+    intents = json.load(json_data)
 
-# Preparing data
-tokenizer = DistilBertTokenizer.from_pretrained('distilbert-base-uncased')
-all_texts = []
-all_labels = []
-tags = []
-
-for intent in intents['intents']:
-    tag = intent['tag']
-    tags.append(tag)
-    for pattern in intent['patterns']:
-        all_texts.append(pattern)
-        all_labels.append(tag)
-
-tags = sorted(set(tags))
-label_to_idx = {tag: idx for idx, tag in enumerate(tags)}
-idx_to_label = {idx: tag for tag, idx in label_to_idx.items()}
-
-# Tokenizing
-encodings = tokenizer(all_texts, truncation=True, padding=True, max_length=512)
-labels = [label_to_idx[label] for label in all_labels]
-
+# Prepare data
 class ChatDataset(Dataset):
-    def __init__(self, encodings, labels):
-        self.encodings = encodings
-        self.labels = labels
-
-    def __getitem__(self, idx):
-        item = {key: torch.tensor(val[idx]) for key, val in self.encodings.items()}
-        item['labels'] = torch.tensor(self.labels[idx])
-        return item
-
+    def __init__(self, tokenizer, intents):
+        self.tokenizer = tokenizer
+        self.inputs = []
+        self.labels = []
+        self.tags = []
+        
+        for intent in intents['intents']:
+            tag = intent['tag']
+            if tag not in self.tags:
+                self.tags.append(tag)
+            for pattern in intent['patterns']:
+                self.inputs.append(pattern)
+                self.labels.append(self.tags.index(tag))
+        
+        self.inputs = [self.tokenizer(input_text, truncation=True, padding='max_length', max_length=64) for input_text in self.inputs]
+    
     def __len__(self):
-        return len(self.labels)
+        return len(self.inputs)
+    
+    def __getitem__(self, idx):
+        item = self.inputs[idx]
+        label = self.labels[idx]
+        return {key: torch.tensor(val) for key, val in item.items()}, torch.tensor(label)
 
-dataset = ChatDataset(encodings, labels)
-train_loader = DataLoader(dataset, batch_size=8, shuffle=True)
+# Initialize tokenizer and dataset
+tokenizer = DistilBertTokenizer.from_pretrained("distilbert-base-uncased")
+dataset = ChatDataset(tokenizer, intents)
 
-# Model
-model = DistilBertForSequenceClassification.from_pretrained('distilbert-base-uncased', num_labels=len(tags))
+# Parameters
+batch_size = 8
+learning_rate = 5e-5
+num_epochs = 10
 
-device = torch.device('cuda') if torch.cuda.is_available() else torch.device('cpu')
-model.to(device)
+# DataLoader
+train_loader = DataLoader(dataset, batch_size=batch_size, shuffle=True)
+
+# Initialize model
+model = DistilBertForSequenceClassification.from_pretrained("distilbert-base-uncased", num_labels=len(dataset.tags))
 model.train()
+device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
+model.to(device)
 
-optimizer = AdamW(model.parameters(), lr=5e-5)
+# Optimizer
+optimizer = AdamW(model.parameters(), lr=learning_rate)
 
-num_epochs = 50
+# Training loop
 for epoch in range(num_epochs):
-    correct = 0
-    total = 0
+    total_loss = 0
+    correct_predictions = 0
+    total_predictions = 0
+    
     for batch in train_loader:
         optimizer.zero_grad()
-        input_ids = batch['input_ids'].to(device)
-        attention_mask = batch['attention_mask'].to(device)
-        labels = batch['labels'].to(device)
-        outputs = model(input_ids, attention_mask=attention_mask, labels=labels)
+        inputs, labels = batch
+        inputs = {key: val.to(device) for key, val in inputs.items()}
+        labels = labels.to(device)
+        
+        outputs = model(**inputs, labels=labels)
         loss = outputs.loss
+        total_loss += loss.item()
+        
+        _, preds = torch.max(outputs.logits, dim=1)
+        correct_predictions += torch.sum(preds == labels)
+        total_predictions += labels.size(0)
+        
         loss.backward()
         optimizer.step()
+    
+    avg_loss = total_loss / len(train_loader)
+    accuracy = (correct_predictions / total_predictions).item() * 100
+    print(f"Epoch {epoch + 1}/{num_epochs}, Loss: {avg_loss:.4f}, Accuracy: {accuracy:.2f}%")
 
-        _, predicted = torch.max(outputs.logits, 1)
-        total += labels.size(0)
-        correct += (predicted == labels).sum().item()
-
-    accuracy = 100 * correct / total
-    print(f'Epoch [{epoch+1}/{num_epochs}], Loss: {loss.item():.4f}, Accuracy: {accuracy:.2f}%')
-
-# Save the model and tokenizer
-model.save_pretrained("chatbot_model")
-tokenizer.save_pretrained("chatbot_tokenizer")
-
-# Save tags and mappings
-with open('chatbot_tags.json', 'w', encoding='utf-8') as f:
-    json.dump({"tags": tags, "label_to_idx": label_to_idx, "idx_to_label": idx_to_label}, f)
+# Save model
+model_data = {
+    "model_state": model.state_dict(),
+    "tags": dataset.tags,
+    "tokenizer_name": tokenizer.name_or_path
+}
+torch.save(model_data, "data.pth")
+print("Training complete. Model saved to data.pth")
