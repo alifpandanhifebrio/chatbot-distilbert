@@ -5,3 +5,4 @@ data.pth
 chatbot_model/model.safetensors
 chatbot_model/config.json
 chatbot_tokenizer
+chatbot_model/config.json

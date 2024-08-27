@@ -31,4 +31,4 @@ def get_response(msg):
             if tag == intent["tag"]:
                 return random.choice(intent['responses'])
     
-    return "Maaf pesan yang anda kirim kurang dimengerti"
+    return "Maaf pesan yang sobat kirim kurang dimengerti"

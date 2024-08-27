@@ -1,7 +1,7 @@
 import torch
 import json
 from torch.utils.data import Dataset, DataLoader
-from transformers import DistilBertTokenizer, DistilBertForSequenceClassification, AdamW
+from transformers import DistilBertTokenizer, DistilBertForSequenceClassification
 import nltk
 from nltk.corpus import stopwords
 from nltk.tokenize import word_tokenize
@@ -14,14 +14,6 @@ nltk.download('stopwords')
 # Initialize Sastrawi stemmer
 factory = StemmerFactory()
 stemmer = factory.create_stemmer()
-
-# Load intents
-with open('intents.json', 'r', encoding='utf-8') as json_data:
-    intents = json.load(json_data)
-
-# Validate intents
-if 'intents' not in intents:
-    raise ValueError("File intents.json tidak mengandung kunci 'intents'.")
 
 # Preprocessing function
 def preprocess_text(text):
@@ -37,18 +29,32 @@ def preprocess_text(text):
     # Join words back to string
     return ' '.join(words)
 
-# Prepare data
-class ChatDataset(Dataset):
-    def __init__(self, tokenizer, intents):
+# Load model
+model_data = torch.load("data.pth")
+model = DistilBertForSequenceClassification.from_pretrained("distilbert-base-uncased", num_labels=len(model_data["tags"]))
+model.load_state_dict(model_data["model_state"])
+
+# Load tokenizer
+tokenizer = DistilBertTokenizer.from_pretrained(model_data["tokenizer_name"])
+
+# Load intents
+with open('testing_prod.json', 'r', encoding='utf-8') as json_data:
+    testing_data = json.load(json_data)
+
+# Validate testing data
+if 'intents' not in testing_data:
+    raise ValueError("File testing.json tidak mengandung kunci 'intents'.")
+
+# Prepare data for testing
+class ChatTestDataset(Dataset):
+    def __init__(self, tokenizer, intents, tags):
         self.tokenizer = tokenizer
         self.inputs = []
         self.labels = []
-        self.tags = []
+        self.tags = tags
         
         for intent in intents['intents']:
             tag = intent['tag']
-            if tag not in self.tags:
-                self.tags.append(tag)
             for pattern in intent['patterns']:
                 preprocessed_pattern = preprocess_text(pattern)
                 self.inputs.append(preprocessed_pattern)
@@ -64,59 +70,30 @@ class ChatDataset(Dataset):
         label = self.labels[idx]
         return {key: val.squeeze(0) for key, val in item.items()}, torch.tensor(label)
 
-# Initialize tokenizer and dataset
-tokenizer = DistilBertTokenizer.from_pretrained("distilbert-base-uncased")
-dataset = ChatDataset(tokenizer, intents)
+# Initialize test dataset and DataLoader
+test_dataset = ChatTestDataset(tokenizer, testing_data, model_data["tags"])
+test_loader = DataLoader(test_dataset, batch_size=8, shuffle=False)
 
-# Parameters
-batch_size = 8
-learning_rate = 5e-5
-epochs = 10
-
-# DataLoader
-train_loader = DataLoader(dataset, batch_size=batch_size, shuffle=True)
-
-# Initialize model
-model = DistilBertForSequenceClassification.from_pretrained("distilbert-base-uncased", num_labels=len(dataset.tags))
-model.train()
+# Move model to the appropriate device
 device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 model.to(device)
+model.eval()
 
-# Optimizer
-optimizer = AdamW(model.parameters(), lr=learning_rate)
+# Evaluation loop
+correct_predictions = 0
+total_predictions = 0
 
-# Training loop
-for epoch in range(epochs):
-    total_loss = 0
-    correct_predictions = 0
-    total_predictions = 0
-    
-    for batch in train_loader:
-        optimizer.zero_grad()
+with torch.no_grad():
+    for batch in test_loader:
         inputs, labels = batch
         inputs = {key: val.to(device) for key, val in inputs.items()}
         labels = labels.to(device)
         
-        outputs = model(**inputs, labels=labels)
-        loss = outputs.loss
-        total_loss += loss.item()
+        outputs = model(**inputs)
         
         _, preds = torch.max(outputs.logits, dim=1)
         correct_predictions += torch.sum(preds == labels)
         total_predictions += labels.size(0)
-        
-        loss.backward()
-        optimizer.step()
-    
-    avg_loss = total_loss / len(train_loader)
-    accuracy = (correct_predictions / total_predictions).item() * 100
-    print(f"Epoch {epoch + 1}/{epochs}, Loss: {avg_loss:.4f}, Accuracy: {accuracy:.2f}%")
 
-# Save model
-model_data = {
-    "model_state": model.state_dict(),
-    "tags": dataset.tags,
-    "tokenizer_name": tokenizer.name_or_path
-}
-torch.save(model_data, "data.pth")
-print("Training complete. Model saved to data.pth")
+accuracy = (correct_predictions / total_predictions).item() * 100
+print(f"Test Accuracy: {accuracy:.2f}%")

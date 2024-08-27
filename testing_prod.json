@@ -1,0 +1,289 @@
+{
+  "intents": [
+    {
+      "tag": "pagi",
+      "patterns": [
+        "pagi teman-teman",
+        "selamat pagi semuanya",
+        "pagi semua",
+        "halo selamat pagi",
+        "met pagi semua",
+        "pagi kak",
+        "hi selamat pagi",
+        "selamat pagi kakak",
+        "pagi bro",
+        "pagi semua orang"
+      ]
+    },
+    {
+      "tag": "siang",
+      "patterns": [
+        "siang teman-teman",
+        "selamat siang semuanya",
+        "halo siang",
+        "siang semua",
+        "met siang teman",
+        "siang bro",
+        "hi selamat siang",
+        "selamat siang semua",
+        "siang kak",
+        "siang semuanya"
+      ]
+    },
+    {
+      "tag": "sore",
+      "patterns": [
+        "selamat sore teman-teman",
+        "halo sore",
+        "sore semua",
+        "met sore semuanya",
+        "selamat sore semua",
+        "sore bro",
+        "sore kak",
+        "hi selamat sore",
+        "sore teman",
+        "sore semuanya"
+      ]
+    },
+    {
+      "tag": "malam",
+      "patterns": [
+        "selamat malam teman-teman",
+        "malam semuanya",
+        "halo malam",
+        "malam semua",
+        "met malam teman",
+        "malam bro",
+        "selamat malam semua",
+        "hi selamat malam",
+        "malam kak",
+        "malam teman-teman"
+      ]
+    },
+    {
+      "tag": "pembukaan",
+      "patterns": [
+        "hi semuanya",
+        "halo apa kabar",
+        "hey bro",
+        "yo apa kabar",
+        "hei teman-teman",
+        "halo teman",
+        "what's up",
+        "hi everyone",
+        "hello there",
+        "hi there"
+      ]
+    },
+    {
+      "tag": "penutupan",
+      "patterns": [
+        "terima kasih banyak",
+        "thanks a lot",
+        "makasih banget",
+        "oke, thanks ya",
+        "terima kasih atas bantuannya",
+        "thanks for the help",
+        "oke, makasih",
+        "thank you very much",
+        "thanks a ton",
+        "makasih banyak ya"
+      ]
+    },
+    {
+      "tag": "ktp",
+      "patterns": [
+        "apa yang harus dilakukan jika KTP petani hilang?",
+        "bagaimana jika KTP hilang?",
+        "solusi jika KTP tidak ada",
+        "apa langkah jika KTP petani hilang?",
+        "bagaimana mengatasi hilangnya KTP?",
+        "KTP petani hilang, apa yang harus dilakukan?",
+        "apa solusi untuk KTP yang hilang?",
+        "apa yang harus dilakukan kalau KTP tidak ditemukan?",
+        "KTP hilang, apa langkah selanjutnya?",
+        "bagaimana cara mendapatkan KTP pengganti jika hilang?"
+      ]
+    },
+    {
+      "tag": "crash",
+      "patterns": [
+        "aplikasi mengalami crash",
+        "ketika mau buka apk ipubers ada tampilan ipubers telah berhenti",
+        "aplikasi keluar sendiri",
+        "aplikasi tiba-tiba berhenti berfungsi",
+        "aplikasi tidak bisa dibuka",
+        "saat membuka aplikasi, muncul pesan kesalahan dan aplikasi tertutup",
+        "aplikasi tidak merespons dan terpaksa ditutup",
+        "terjadi error saat aplikasi sedang aktif",
+        "aplikasi sering mengalami kegagalan saat diakses",
+        "buka aplikasi, lalu aplikasi langsung tutup tanpa alasan"
+      ]
+    },
+    {
+      "tag": "maintenance",
+      "patterns": [
+        "terdapat keterangan sistem dalam perbaikan pada aplikasi",
+        "saya mengalami error waktu perangkat tidak bisa akses e alokasi dan tidak bisa akses jual produk subsidi",
+        "sistem sedang dalam proses pemeliharaan",
+        "layanan sementara tidak tersedia karena perawatan sistem",
+        "aplikasi mengalami gangguan dan sedang diperbaiki",
+        "akses ke fitur tertentu tidak dapat dilakukan karena pemeliharaan",
+        "proses perbaikan sistem sedang berlangsung, harap bersabar",
+        "kami sedang melakukan update sistem, akses terbatas",
+        "terdapat masalah teknis dan sistem sedang dalam perbaikan",
+        "sistem dalam perbaikan"
+      ]
+    },
+    {
+      "tag": "salah_kode_kios",
+      "patterns": [
+        "kata sandi salah terus",
+        "tidak bisa log in dan tertulis kode retailer tidak ditemukan",
+        "tidak bisa long in",
+        "error saat login, kode kios yang dimasukkan salah",
+        "aplikasi tidak bisa long in",
+        "terdapat kesalahan pada kode kios atau kata sandi",
+        "login gagal, pesan error menyatakan kode kios salah",
+        "kode kios yang dimasukkan tidak sesuai, coba periksa kembali",
+        "aplikasi menunjukkan pesan bahwa kode retailer tidak ditemukan",
+        "sistem menganggap kata sandi salah meski sudah benar"
+      ]
+    },
+    {
+      "tag": "gagal_upload",
+      "patterns": [
+        "ketika transaksi tidak bisa scan KTP petani",
+        "saat sedang menggunakan aplikasi untuk transaksi, tidak bisa scan KTP petani",
+        "gagal mengunggah foto KTP petani saat transaksi",
+        "tidak dapat mengunggah foto ktp",
+        "gagal mengunggah ktp petani",
+        "foto ktp gagal terunduh",
+        "scan KTP petani tidak berhasil, proses transaksi terhenti",
+        "error saat mengupload KTP petani, coba lagi nanti",
+        "tidak bisa mengunggah file",
+        "ktp tidak dapat di scan"
+      ]
+    },
+    {
+      "tag": "login_perangkat",
+      "patterns": [
+        "anda hanya bisa login pada perangkat",
+        "anda hanya bisa login perqngkat",
+        "akunnya sudah pernah dan tidak bisa masuk ke aplikasi",
+        "ngak bisa login ke hp lain",
+        "akun tidak bisa di buka karena hp saya kena reset dan kembali ke pabrikan sehingga sewaktu saya masuk lagi akun tidak bisa di buka atau akun anda sudah pernah masuk",
+        "login gagal karena akun hanya terdaftar pada satu perangkat",
+        "tidak dapat mengakses akun di perangkat baru",
+        "akun Anda tidak bisa digunakan di perangkat lain",
+        "setelah reset pabrik, tidak bisa login ke perangkat ini",
+        "error saat login di perangkat baru, akun hanya terdaftar di perangkat lama"
+      ]
+    },
+    {
+      "tag": "error_500_400",
+      "patterns": [
+        "apa yang harus dilakukan jika menemui error 500 atau 400?",
+        "gimana cara memperbaiki error 500 dan 400 pada aplikasi?",
+        "apa langkah-langkah jika aplikasi menunjukkan error 500 dan 400?",
+        "bagaimana cara mengatasi error 500 dan 400 yang muncul?",
+        "apa solusi untuk error 500 dan 400 yang terjadi pada aplikasi?",
+        "gimana caranya menangani error 500 dan 400 dalam aplikasi?",
+        "apa yang harus dilakukan jika aplikasi menunjukkan kode error 500 atau 400?",
+        "bagaimana cara menyelesaikan masalah dengan error 500 dan 400?",
+        "apa langkah-langkah yang tepat untuk error 500 dan 400?",
+        "gimana cara mengatasi error 500 dan 400 jika muncul pada aplikasi?"
+      ]
+    },
+    {
+      "tag": "chain_validation_failed",
+      "patterns": [
+        "apa yang harus dilakukan jika muncul error 'Chain Validation Failed'?",
+        "gimana cara mengatasi error 'Chain Validation Failed' pada aplikasi?",
+        "apa solusi untuk error 'Chain Validation Failed' yang muncul?",
+        "bagaimana cara memperbaiki error 'Chain Validation Failed'?",
+        "apa langkah-langkah jika aplikasi menampilkan error 'Chain Validation Failed'?",
+        "apa yang perlu dilakukan jika terjadi error 'Chain Validation Failed'?",
+        "bagaimana menangani error 'Chain Validation Failed' yang muncul di aplikasi?",
+        "apa solusi yang efektif untuk error 'Chain Validation Failed'?",
+        "apa tindakan yang harus diambil jika menghadapi error 'Chain Validation Failed'?",
+        "gimana cara mengatasi masalah 'Chain Validation Failed' pada aplikasi?"
+      ]
+    },
+    {
+      "tag": "dokumentasi",
+      "patterns": [
+        "apakah penting untuk menyimpan dokumentasi petani?",
+        "haruskah dokumentasi petani selalu diperbarui dan disimpan?",
+        "apa pentingnya menyimpan dokumentasi petani?",
+        "bagaimana mengelola dokumentasi petani dengan baik?",
+        "apakah dokumentasi petani harus disimpan secara teratur?",
+        "perlukah memelihara dokumentasi petani dalam jangka panjang?",
+        "apa langkah-langkah yang harus diambil untuk menyimpan dokumentasi petani?",
+        "bagaimana cara mengelola dokumentasi petani dengan benar?",
+        "apakah ada kewajiban untuk menyimpan dan memperbarui dokumentasi petani?",
+        "dokumen petani harus disimpan untuk berapa lama?"
+      ]
+    },
+    {
+      "tag": "versi_android",
+      "patterns": [
+        "berapa versi Android minimal untuk aplikasi ini?",
+        "versi Android apa yang dibutuhkan untuk aplikasi ini?",
+        "berapa versi Android yang diperlukan untuk menjalankan aplikasi ini?",
+        "minimal versi Android yang didukung aplikasi ini berapa?",
+        "versi Android apa yang kompatibel dengan aplikasi ini?",
+        "apa spesifikasi Android minimal untuk aplikasi ini?",
+        "apakah ada batasan versi Android untuk aplikasi ini?",
+        "berapa versi Android yang harus terpasang untuk aplikasi ini?",
+        "versi Android berapa yang direkomendasikan untuk aplikasi ini?",
+        "versi Android minimal agar aplikasi ini bisa berjalan berapa?"
+      ]
+    },
+    {
+      "tag": "offline",
+      "patterns": [
+        "bisakah transaksi dilakukan tanpa koneksi internet?",
+        "bagaimana cara melakukan transaksi secara offline?",
+        "apa metode transaksi tanpa aplikasi?",
+        "gimana caranya transaksi jika tanpa internet?",
+        "apakah mungkin melakukan transaksi secara manual?",
+        "cara transaksi tanpa aplikasi apa yang tersedia?",
+        "bisakah saya bertransaksi tanpa akses online?",
+        "apa cara untuk bertransaksi tanpa internet?",
+        "gimana transaksi offline dilakukan?",
+        "apa solusi transaksi tanpa aplikasi atau internet?"
+      ]
+    },
+    {
+      "tag": "pembelian",
+      "patterns": [
+        "bagaimana cara membeli pupuk bersubsidi?",
+        "apa langkah-langkah untuk membeli pupuk subsidi?",
+        "prosedur pembelian pupuk subsidi",
+        "gimana caranya beli pupuk subsidi?",
+        "apa syarat untuk membeli pupuk bersubsidi?",
+        "langkah-langkah beli pupuk subsidi",
+        "bagaimana proses untuk mendapatkan pupuk bersubsidi?",
+        "apa yang perlu dilakukan untuk membeli pupuk subsidi?",
+        "cara mendapatkan pupuk bersubsidi",
+        "apa yang harus dipenuhi untuk membeli pupuk subsidi?"
+      ]
+    },
+    {
+      "tag": "petani_tidak_ditemukan",
+      "patterns": [
+        "apa yang harus dilakukan jika data petani tidak ditemukan?",
+        "bagaimana mengatasi jika data petani tidak ada di aplikasi?",
+        "apa solusi jika petani tidak terdaftar dalam sistem?",
+        "gimana caranya mengatasi data petani yang tidak ada?",
+        "langkah-langkah apa yang diambil jika petani tidak ditemukan?",
+        "apa yang harus dilakukan jika data petani tidak terdaftar?",
+        "bagaimana cara mengatasi jika petani tidak muncul di aplikasi?",
+        "apa yang bisa dilakukan jika data petani hilang?",
+        "bagaimana cara menangani situasi saat data petani tidak ditemukan?",
+        "apa yang harus dilakukan jika petani tidak terdaftar di sistem?"
+      ]
+    }
+  ]
+}
