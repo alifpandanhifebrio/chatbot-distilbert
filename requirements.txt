@@ -176,7 +176,6 @@ python-oauth2==1.1.1
 python-telegram-bot==21.3
 pytweening==1.0.7
 pytz==2024.1
-pywin32==306
 pywinpty==2.0.13
 PyYAML==5.3
 pyzmq==26.0.3
