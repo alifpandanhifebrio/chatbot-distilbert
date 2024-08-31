@@ -1,0 +1,214 @@
+{
+  "intents": [
+    {
+      "tag": "pagi",
+      "patterns": [
+        "pagi teman-teman",
+        "selamat pagi semuanya",
+        "pagi semua",
+        "halo selamat pagi",
+        "met pagi semua"
+      ]
+    },
+    {
+      "tag": "siang",
+      "patterns": [
+        "siang teman-teman",
+        "selamat siang semuanya",
+        "halo siang",
+        "siang semua",
+        "met siang teman"
+      ]
+    },
+    {
+      "tag": "sore",
+      "patterns": [
+        "selamat sore teman-teman",
+        "halo sore",
+        "sore semua",
+        "met sore semuanya",
+        "selamat sore semua"
+      ]
+    },
+    {
+      "tag": "malam",
+      "patterns": [
+        "selamat malam teman-teman",
+        "malam semuanya",
+        "halo malam",
+        "malam semua",
+        "met malam teman"
+      ]
+    },
+    {
+      "tag": "pembukaan",
+      "patterns": [
+        "hi semuanya",
+        "halo apa kabar",
+        "hey bro",
+        "yo apa kabar",
+        "hei teman-teman"
+      ]
+    },
+    {
+      "tag": "penutupan",
+      "patterns": [
+        "terima kasih banyak",
+        "thanks a lot",
+        "makasih banget",
+        "oke, thanks ya",
+        "terima kasih atas bantuannya"
+      ]
+    },
+    {
+      "tag": "ktp",
+      "patterns": [
+        "apa yang harus dilakukan jika KTP petani hilang?",
+        "bagaimana jika KTP petani hilang?",
+        "solusi jika KTP tidak ada atau hilang",
+        "apa langkah jika KTP petani hilang?",
+        "bagaimana mengatasi hilangnya KTP?"
+      ]
+    },
+    {
+      "tag": "crash",
+      "patterns": [
+        "aplikasi mengalami crash",
+        "ketika mau buka apk ipubers ada tampilan ipubers telah berhenti",
+        "aplikasi keluar sendiri",
+        "aplikasi tiba-tiba berhenti berfungsi",
+        "aplikasi tidak bisa dibuka"
+      ]
+    },
+    {
+      "tag": "maintenance",
+      "patterns": [
+        "terdapat keterangan sistem dalam perbaikan pada aplikasi",
+        "saya mengalami error waktu perangkat tidak bisa akses e alokasi dan tidak bisa akses jual produk subsidi",
+        "sistem sedang dalam proses pemeliharaan",
+        "layanan sementara tidak tersedia karena perawatan sistem",
+        "aplikasi mengalami gangguan dan sedang diperbaiki"
+      ]
+    },
+    {
+      "tag": "salah_kode_kios",
+      "patterns": [
+        "kata sandi salah terus",
+        "tidak bisa log in dan tertulis kode retailer tidak ditemukan",
+        "tidak bisa long in",
+        "error saat login, kode kios yang dimasukkan salah",
+        "aplikasi tidak bisa long in"
+      ]
+    },
+    {
+      "tag": "gagal_unggah_dokumen",
+      "patterns": [
+        "ketika transaksi tidak bisa unggah dokumen",
+        "saat sedang menggunakan aplikasi untuk transaksi, tidak bisa unggah dokumen",
+        "gagal upload foto KTP petani saat transaksi",
+        "tidak dapat mengunggah berkas petani",
+        "gagal mengunggah ktp petani"
+      ]
+    },
+    {
+      "tag": "login_perangkat",
+      "patterns": [
+        "anda hanya bisa login pada perangkat",
+        "anda hanya bisa login perqngkat",
+        "akunnya sudah pernah login dan tidak bisa masuk ke aplikasi, bisa login di hp yang baru  ga",
+        "ngak bisa login ke hp lain",
+        "akun tidak bisa di buka karena hp saya kena reset dan kembali ke pabrikan sehingga sewaktu saya masuk lagi akun tidak bisa di buka atau akun anda sudah pernah masuk"
+      ]
+    },
+    {
+      "tag": "error_500_400",
+      "patterns": [
+        "apa yang harus dilakukan jika menemui error 500 atau 400?",
+        "gimana cara memperbaiki error 500 dan 400 pada aplikasi?",
+        "apa langkah-langkah jika aplikasi menunjukkan error 500 dan 400?",
+        "bagaimana cara mengatasi error 500 dan 400 yang muncul?",
+        "apa solusi untuk error 500 dan 400 yang terjadi pada aplikasi?"
+      ]
+    },
+    {
+      "tag": "chain_validation_failed",
+      "patterns": [
+        "apa yang harus dilakukan jika muncul error 'Chain Validation Failed'?",
+        "gimana cara mengatasi error 'Chain Validation Failed' pada aplikasi?",
+        "apa solusi untuk error 'Chain Validation Failed' yang muncul?",
+        "bagaimana cara memperbaiki error 'Chain Validation Failed'?",
+        "apa langkah-langkah jika aplikasi menampilkan error 'Chain Validation Failed'?"
+      ]
+    },
+    {
+      "tag": "dokumentasi",
+      "patterns": [
+        "apakah penting untuk menyimpan dokumentasi petani?",
+        "haruskah dokumentasi petani selalu diperbarui dan disimpan?",
+        "apa pentingnya menyimpan dokumentasi petani?",
+        "bagaimana mengelola dokumentasi petani dengan baik?",
+        "apakah dokumentasi petani harus disimpan secara teratur?"
+      ]
+    },
+    {
+      "tag": "versi_android",
+      "patterns": [
+        "berapa versi Android minimal untuk aplikasi ini?",
+        "versi Android apa yang dibutuhkan untuk aplikasi ini?",
+        "berapa versi Android yang diperlukan untuk menjalankan aplikasi ini?",
+        "minimal versi Android yang didukung aplikasi ini berapa?",
+        "versi Android apa yang kompatibel dengan aplikasi ini?"
+      ]
+    },
+    {
+      "tag": "offline",
+      "patterns": [
+        "bisakah transaksi dilakukan tanpa koneksi internet?",
+        "bagaimana cara melakukan transaksi secara offline?",
+        "apa metode transaksi tanpa aplikasi?",
+        "gimana caranya transaksi jika tanpa internet?",
+        "apakah mungkin melakukan transaksi secara manual?"
+      ]
+    },
+    {
+      "tag": "pembelian",
+      "patterns": [
+        "bagaimana cara membeli pupuk bersubsidi?",
+        "apa langkah-langkah untuk membeli pupuk subsidi?",
+        "prosedur pembelian pupuk subsidi",
+        "gimana caranya beli pupuk subsidi?",
+        "apa syarat untuk membeli pupuk bersubsidi?"
+      ]
+    },
+    {
+      "tag": "petani_tidak_ditemukan",
+      "patterns": [
+        "apa yang harus dilakukan jika data petani tidak ditemukan?",
+        "bagaimana mengatasi jika data petani tidak ada di aplikasi?",
+        "apa solusi jika petani tidak terdaftar dalam sistem?",
+        "gimana caranya mengatasi data petani yang tidak ada?",
+        "langkah-langkah apa yang diambil jika petani tidak ditemukan?"
+      ]
+    },
+    {
+      "tag": "harga",
+      "patterns": [
+        "berapa harga pupuk yang ada pada aplikasi ipubers?",
+        "harga pupuk yang ada di aplikasi ipubers berapa ya?",
+        "berapa biaya pupuk di aplikasi ipubers?",
+        "apa harga dari berbagai jenis pupuk yang tersedia di aplikasi ipubers?",
+        "harga pupuk yang ditawarkan di aplikasi ipubers berapa?"
+      ]
+    },
+    {
+      "tag": "jenis_pupuk",
+      "patterns": [
+        "pupuk apa saja yang dapat dibeli di aplikasi ipubers?",
+        "jenis pupuk apa aja yang dijual di aplikasi?",
+        "pada aplikasi ipubers jenis pupuk apa saja yang dapat dibeli oleh petani?",
+        "apa saja tipe pupuk yang tersedia di aplikasi ipubers?",
+        "jenis-jenis pupuk apa yang ditawarkan oleh aplikasi ipubers untuk para petani?"
+      ]
+    }
+  ]
+}

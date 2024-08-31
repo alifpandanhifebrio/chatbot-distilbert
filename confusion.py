@@ -37,7 +37,7 @@ model.load_state_dict(model_data["model_state"])
 tokenizer = DistilBertTokenizer.from_pretrained(model_data["tokenizer_name"])
 
 # Load testing data
-with open('testing_prod.json', 'r', encoding='utf-8') as json_data:
+with open('testing20%.json', 'r', encoding='utf-8') as json_data:
     testing_data = json.load(json_data)
 
 # Validate testing data

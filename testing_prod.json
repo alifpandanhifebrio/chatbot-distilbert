@@ -94,8 +94,8 @@
       "tag": "ktp",
       "patterns": [
         "apa yang harus dilakukan jika KTP petani hilang?",
-        "bagaimana jika KTP hilang?",
-        "solusi jika KTP tidak ada",
+        "bagaimana jika KTP petani hilang?",
+        "solusi jika KTP tidak ada atau hilang",
         "apa langkah jika KTP petani hilang?",
         "bagaimana mengatasi hilangnya KTP?",
         "KTP petani hilang, apa yang harus dilakukan?",
@@ -151,12 +151,12 @@
       ]
     },
     {
-      "tag": "gagal_upload",
+      "tag": "gagal_unggah_dokumen",
       "patterns": [
-        "ketika transaksi tidak bisa scan KTP petani",
-        "saat sedang menggunakan aplikasi untuk transaksi, tidak bisa scan KTP petani",
-        "gagal mengunggah foto KTP petani saat transaksi",
-        "tidak dapat mengunggah foto ktp",
+        "ketika transaksi tidak bisa unggah dokumen",
+        "saat sedang menggunakan aplikasi untuk transaksi, tidak bisa unggah dokumen",
+        "gagal upload foto KTP petani saat transaksi",
+        "tidak dapat mengunggah berkas petani",
         "gagal mengunggah ktp petani",
         "foto ktp gagal terunduh",
         "scan KTP petani tidak berhasil, proses transaksi terhenti",
@@ -170,7 +170,7 @@
       "patterns": [
         "anda hanya bisa login pada perangkat",
         "anda hanya bisa login perqngkat",
-        "akunnya sudah pernah dan tidak bisa masuk ke aplikasi",
+        "akunnya sudah pernah login dan tidak bisa masuk ke aplikasi, bisa login di hp yang baru  ga",
         "ngak bisa login ke hp lain",
         "akun tidak bisa di buka karena hp saya kena reset dan kembali ke pabrikan sehingga sewaktu saya masuk lagi akun tidak bisa di buka atau akun anda sudah pernah masuk",
         "login gagal karena akun hanya terdaftar pada satu perangkat",
@@ -283,6 +283,36 @@
         "apa yang bisa dilakukan jika data petani hilang?",
         "bagaimana cara menangani situasi saat data petani tidak ditemukan?",
         "apa yang harus dilakukan jika petani tidak terdaftar di sistem?"
+      ]
+    },
+    {
+      "tag": "harga",
+      "patterns": [
+        "berapa harga pupuk yang ada pada aplikasi ipubers?",
+        "harga pupuk yang ada di aplikasi ipubers berapa ya?",
+        "berapa biaya pupuk di aplikasi ipubers?",
+        "apa harga dari berbagai jenis pupuk yang tersedia di aplikasi ipubers?",
+        "harga pupuk yang ditawarkan di aplikasi ipubers berapa?",
+        "bisa beri tahu saya harga pupuk yang ada di aplikasi ipubers?",
+        "berapa tarif pupuk yang tersedia di aplikasi ipubers?",
+        "harga setiap jenis pupuk di aplikasi ipubers itu berapa?",
+        "berapa harga untuk membeli pupuk di aplikasi ipubers?",
+        "harga pupuk di aplikasi ipubers berapa per kilogram?"
+      ]
+    },
+    {
+      "tag": "jenis_pupuk",
+      "patterns": [
+        "pupuk apa saja yang dapat dibeli di aplikasi ipubers?",
+        "jenis pupuk apa aja yang dijual di aplikasi?",
+        "pada aplikasi ipubers jenis pupuk apa saja yang dapat dibeli oleh petani?",
+        "apa saja tipe pupuk yang tersedia di aplikasi ipubers?",
+        "jenis-jenis pupuk apa yang ditawarkan oleh aplikasi ipubers untuk para petani?",
+        "di aplikasi ipubers, jenis pupuk apa saja yang bisa dibeli?",
+        "pupuk apa saja yang bisa ditemukan di aplikasi ipubers?",
+        "apa daftar jenis pupuk yang ada di aplikasi ipubers?",
+        "di aplikasi ipubers, jenis pupuk apa saja yang tersedia untuk petani?",
+        "daftar jenis pupuk apa yang ada di aplikasi ipubers?"
       ]
     }
   ]
