@@ -1,12 +1,17 @@
-FROM python:3.10-bookworm
+# Gunakan image Python sebagai base
+FROM python:3.10-slim
 
-ENV PYTHONUNBUFFERED True
+# Set work directory
+WORKDIR /app
 
-ENV APP_HOME /back-end
-WORKDIR $APP_HOME
-COPY . ./
+# Copy semua file ke work directory
+COPY . /app
 
-RUN pip install --no-cache-dir --upgrade pip
+# Install dependencies
 RUN pip install --no-cache-dir -r requirements.txt
 
-CMD exec gunicorn --bind :$PORT --workers 1 --threads 8 --timeout 0 app:app
+# Expose port yang akan digunakan Flask
+EXPOSE 80
+
+# Perintah untuk menjalankan aplikasi Flask
+CMD ["python", "app.py"]
